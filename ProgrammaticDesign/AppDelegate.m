@@ -14,11 +14,32 @@
 
 @implementation AppDelegate
 
+static id rootViewController = nil;
+
++(UIViewController*) getRootView{
+    return rootViewController;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    rootViewController = [[UserViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+//    [self loadInitialViewController];
+    [self.window setRootViewController:navController];
+    [navController popToRootViewControllerAnimated:NO];
+    [self.window makeKeyAndVisible];
     return YES;
+    
+     //Override point for customization after application launch.
+    
+    // Create a view and add it to the window.
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
