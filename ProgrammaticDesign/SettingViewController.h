@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "UserViewController.h"
+
+
 @interface SettingViewController : UIViewController
+
+
+
+@property UserViewController* rootViewController;
+
 
 @property UITextField* name;
 @property UITextField* email;
 @property UITextField* password;
 @property UITextField* age;
-@property User* current_user;
 @property UILabel *header;
 @property UITextField *location;
 @property UITableView *services;

@@ -1,13 +1,12 @@
 //
 //  SettingViewController.m
 //  ProgrammaticDesign
-//
+//  Upload to git: git push https://github.com/Dellybro/ProgrammaticDesign.git
 //  Created by Travis Delly on 5/11/15.
 //  Copyright (c) 2015 Travis Delly. All rights reserved.
 //
 
 #import "SettingViewController.h"
-#import "UserViewController.h"
 
 @interface SettingViewController ()
 
@@ -19,21 +18,20 @@
 
 
 -(void)submitButton:(UIButton *)button{
-    UserViewController *rootViewController = [self.navigationController.viewControllers firstObject];
     
     
     if(_name.text.length > 1){
-        rootViewController.currentUser.name = _name.text;
+        _rootViewController.currentUser.name = _name.text;
     }
     if(_location.text.length > 1){
-        rootViewController.currentUser.location = _location.text;
+        _rootViewController.currentUser.location = _location.text;
     }
     
     if(_email.text.length > 1){
-        rootViewController.currentUser.email = _email.text;
+        _rootViewController.currentUser.email = _email.text;
     }
     if(_age.text.length > 1){
-        rootViewController.currentUser.age = _age.text;
+        _rootViewController.currentUser.age = _age.text;
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -42,8 +40,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _current_user = [[self.navigationController.viewControllers firstObject] currentUser];
+    _rootViewController = [self.navigationController.viewControllers firstObject];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -55,16 +52,16 @@
     
     
     _name = [[UITextField alloc] initWithFrame:CGRectMake(20, 175, 100,40)];
-    [_name setText:_current_user.name];
+    [_name setText:_rootViewController.currentUser.name];
     
     _email = [[UITextField alloc] initWithFrame:CGRectMake(20, 225, 100,40)];
-    [_email setText:_current_user.email];
+    [_email setText:_rootViewController.currentUser.email];
     
     _location = [[UITextField alloc] initWithFrame:CGRectMake(20, 275, 100,40)];
-    [_location setText:_current_user.location];
+    [_location setText:_rootViewController.currentUser.location];
     
     _age = [[UITextField alloc] initWithFrame:CGRectMake(20, 325, 100,40)];
-    [_age setText:_current_user.age];
+    [_age setText:_rootViewController.currentUser.age];
     
     
     _header = [[UILabel alloc] initWithFrame:CGRectMake(50,50, 500, 125)];
@@ -77,7 +74,7 @@
     
     _services = [[UITableView alloc] initWithFrame:CGRectMake(20,375, 150,150)];
     UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = _current_user.services[0];
+    cell.textLabel.text = _rootViewController.currentUser.services[0];
     _services.editing = YES;
     
     

@@ -7,13 +7,12 @@
 //
 
 #import "UserViewController.h"
+#import "SettingViewController.h"
 
 @implementation UserViewController
 
 -(void)settingControllerbutton:(UIButton*)button{
     SettingViewController *nextController = [[SettingViewController alloc]init];
-    
-    nextController.current_user = _currentUser;
     
     [self.navigationController showViewController:nextController sender:self];
     

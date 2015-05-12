@@ -10,7 +10,6 @@
 
 #import "User.h"
 #import "SearchViewController.h"
-#import "SettingViewController.h"
 
 @interface UserViewController : UIViewController
 
