@@ -92,7 +92,7 @@
     [self.view addSubview:_location];
     [self.view addSubview:_age];
     [self.view addSubview:_header];
-    [self.view addSubview:_services];
+    //[self.view addSubview:_services];
 }
 
 @end

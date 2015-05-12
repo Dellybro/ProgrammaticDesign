@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import "UserViewController.h"
+#import "User.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+
+@property (nonatomic) User *currentUser;
 
 
 @property(nonatomic) UIWindow *window;

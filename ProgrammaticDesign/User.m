@@ -20,12 +20,12 @@
 -(id)init {
     
     if(self){
-        _name = @"blank";
-        _email = @"blank";
-        _age = @"blank";
-        _location = @"blank";
-        _password = @"blank";
-        _services = [[NSMutableArray alloc] initWithObjects:@"blank", @"blank", nil];
+        _name = @"name";
+        _email = @"email";
+        _age = @"age";
+        _location = @"location";
+        _password = @"password";
+        _services = [[NSMutableArray alloc] initWithObjects:@"service1", @"service2", nil];
     }
     return self;
 }

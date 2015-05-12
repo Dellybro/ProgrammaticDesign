@@ -23,6 +23,8 @@ static id rootViewController = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    _currentUser = [[User alloc] init];
+    
     rootViewController = [[UserViewController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
