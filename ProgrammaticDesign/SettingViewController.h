@@ -11,13 +11,13 @@
 #import "UserViewController.h"
 
 
-@interface SettingViewController : UIViewController
+@interface SettingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
 
 @property UserViewController* rootViewController;
 
-
+@property UITableView* tableView;
 @property UITextField* name;
 @property UITextField* email;
 @property UITextField* password;

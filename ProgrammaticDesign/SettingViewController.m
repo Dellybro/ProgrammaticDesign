@@ -17,6 +17,7 @@
 @implementation SettingViewController
 
 
+
 -(void)submitButton:(UIButton *)button{
     
     
@@ -42,9 +43,21 @@
     [super viewDidLoad];
     _rootViewController = [self.navigationController.viewControllers firstObject];
     
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(20,375, 150,150) style:UITableViewStylePlain];
+    
+    // must set delegate & dataSource, otherwise the the table will be empty and not responsive
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    // add to canvas
+    [self.view addSubview:_tableView];
+    
+    
+    //End table View
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _submit = [[UIButton alloc] initWithFrame:CGRectMake(20, 450, 60, 40)];
+    _submit = [[UIButton alloc] initWithFrame:CGRectMake(20, 520, 60, 40)];
     [_submit setTitle:@"Submit" forState:UIControlStateNormal];
     _submit.backgroundColor = [UIColor blueColor];
     [_submit setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
@@ -72,13 +85,6 @@
     
     self.navigationItem.title = @"Settings";
     
-    _services = [[UITableView alloc] initWithFrame:CGRectMake(20,375, 150,150)];
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
-    cell.textLabel.text = _rootViewController.currentUser.services[0];
-    _services.editing = YES;
-    
-    
-    [_services addSubview:cell];
     
     [self.view addSubview:_name];
     [self.view addSubview:_submit];
@@ -86,7 +92,44 @@
     [self.view addSubview:_location];
     [self.view addSubview:_age];
     [self.view addSubview:_header];
-    //[self.view addSubview:_services];
+}
+
+//Table View Delegation
+#pragma mark - UITableViewDataSource
+
+// number of section(s), now I assume there is only 1 section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
+{
+    return 1;
+}
+
+// number of row in the section, I assume there is only 1 row
+- (NSInteger)tableView:(UITableView *)theTableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+// the cell will be returned to the tableView
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"HistoryCell";
+    
+    // Similar to UITableViewCell, but
+    UITableViewCell *cell = (UITableViewCell *)[theTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    // Just want to test, so I hardcode the data
+    cell.textLabel.text = @"Hello";
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+// when user tap the row, what action you want to perform
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"selected %ld row", (long)indexPath.row);
 }
 
 @end

@@ -11,6 +11,8 @@
 
 @implementation UserViewController
 
+
+
 -(void)settingControllerbutton:(UIButton*)button{
     SettingViewController *nextController = [[SettingViewController alloc]init];
     
@@ -27,14 +29,13 @@
     
 }
 
+
 -(void)labels{
     _username = [[UILabel alloc] initWithFrame:CGRectMake(20, 175, 100,40)];
     _email = [[UILabel alloc] initWithFrame:CGRectMake(20, 225, 100,40)];
     _location = [[UILabel alloc] initWithFrame:CGRectMake(20, 275, 100,40)];
     _age = [[UILabel alloc] initWithFrame:CGRectMake(20, 325, 100,40)];
     _services = [[UILabel alloc] initWithFrame:CGRectMake(20, 375, 100,40)];
-    
-    
     
 }
 
