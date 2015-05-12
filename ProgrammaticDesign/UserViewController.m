@@ -30,35 +30,20 @@
 
 -(void)labels{
     _username = [[UILabel alloc] initWithFrame:CGRectMake(20, 175, 100,40)];
-    [_username setText:_currentUser.name];
-    
     _email = [[UILabel alloc] initWithFrame:CGRectMake(20, 225, 100,40)];
-    [_email setText:_currentUser.email];
-    
     _location = [[UILabel alloc] initWithFrame:CGRectMake(20, 275, 100,40)];
-    [_location setText:_currentUser.location];
-    
     _age = [[UILabel alloc] initWithFrame:CGRectMake(20, 325, 100,40)];
-    [_age setText:_currentUser.age];
-    
-    
-//    NSMutableArray *services;
-//    for(int i = 0; i < _currentUser.services.count; i++){
-//        NSLog(@"inside");
-//        [services addObject:[[UILabel alloc] initWithFrame:CGRectMake(20, (425), 100,40)]];
-//        [services[i] setText:_currentUser.services[i]];
-//        [self.view addSubview:services[i]];
-//    }
-    
-    
     _services = [[UILabel alloc] initWithFrame:CGRectMake(20, 375, 100,40)];
-    [_services setText:_currentUser.services[0]];
     
     
     
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [_username setText:_currentUser.name];
+    [_email setText:_currentUser.email];
+    [_location setText:_currentUser.location];
+    [_age setText:_currentUser.age];
     
 }
 

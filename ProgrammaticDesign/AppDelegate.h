@@ -14,7 +14,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 
-@property (nonatomic) User *currentUser;
+@property User *currentUser;
 
 
 @property(nonatomic) UIWindow *window;

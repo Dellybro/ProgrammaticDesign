@@ -21,22 +21,19 @@
 -(void)submitButton:(UIButton *)button{
     UserViewController *rootViewController = [self.navigationController.viewControllers firstObject];
     
+    
     if(_name.text.length > 1){
         rootViewController.currentUser.name = _name.text;
-        rootViewController.username.text = rootViewController.currentUser.name;
     }
     if(_location.text.length > 1){
         rootViewController.currentUser.location = _location.text;
-        rootViewController.location.text = rootViewController.currentUser.location;
     }
     
     if(_email.text.length > 1){
         rootViewController.currentUser.email = _email.text;
-        rootViewController.email.text = rootViewController.currentUser.email;
     }
     if(_age.text.length > 1){
         rootViewController.currentUser.age = _age.text;
-        rootViewController.age.text = rootViewController.currentUser.age;
     }
     
     [self.navigationController popViewControllerAnimated:YES];
