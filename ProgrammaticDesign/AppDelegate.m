@@ -33,8 +33,13 @@ static id rootViewController = nil;
     
 //    [self loadInitialViewController];
     [self.window setRootViewController:navController];
+    
+    
     [navController popToRootViewControllerAnimated:NO];
+    
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
     
      //Override point for customization after application launch.

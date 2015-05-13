@@ -9,6 +9,13 @@
 #import "UserViewController.h"
 #import "SettingViewController.h"
 
+@interface UserViewController()
+
+@property AppDelegate *sharedDelegate;
+
+
+@end
+
 @implementation UserViewController
 
 
@@ -40,17 +47,17 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [_username setText:_currentUser.name];
-    [_email setText:_currentUser.email];
-    [_location setText:_currentUser.location];
-    [_age setText:_currentUser.age];
+    [_username setText:_sharedDelegate.currentUser.name];
+    [_email setText:_sharedDelegate.currentUser.email];
+    [_location setText:_sharedDelegate.currentUser.location];
+    [_age setText:_sharedDelegate.currentUser.age];
     
 }
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
-    _currentUser = [[User alloc] init];
+
+    _sharedDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.view.backgroundColor = [UIColor whiteColor];
     

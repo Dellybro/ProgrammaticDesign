@@ -16,6 +16,7 @@
 		9DD462521AFE9F03001316E3 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD462511AFE9F03001316E3 /* SearchViewController.m */; };
 		9DD462551B0130DB001316E3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD462541B0130DB001316E3 /* User.m */; };
 		9DD4625B1B0137EF001316E3 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4625A1B0137EF001316E3 /* SettingViewController.m */; };
+		9DD462641B030946001316E3 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD462631B030946001316E3 /* SettingTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		9DD462541B0130DB001316E3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		9DD462591B0137EF001316E3 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		9DD4625A1B0137EF001316E3 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		9DD462621B030946001316E3 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
+		9DD462631B030946001316E3 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				9DD462541B0130DB001316E3 /* User.m */,
 				9DD462591B0137EF001316E3 /* SettingViewController.h */,
 				9DD4625A1B0137EF001316E3 /* SettingViewController.m */,
+				9DD462621B030946001316E3 /* SettingTableViewController.h */,
+				9DD462631B030946001316E3 /* SettingTableViewController.m */,
 			);
 			path = ProgrammaticDesign;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 			files = (
 				9DD462551B0130DB001316E3 /* User.m in Sources */,
 				9DD4624F1AFE75BB001316E3 /* UserViewController.m in Sources */,
+				9DD462641B030946001316E3 /* SettingTableViewController.m in Sources */,
 				9DD4625B1B0137EF001316E3 /* SettingViewController.m in Sources */,
 				9DD462211AFD7326001316E3 /* AppDelegate.m in Sources */,
 				9DD462521AFE9F03001316E3 /* SearchViewController.m in Sources */,

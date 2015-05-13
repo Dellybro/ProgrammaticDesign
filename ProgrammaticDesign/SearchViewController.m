@@ -28,15 +28,6 @@
     [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(150,300,250,100)];
-    label.text = _username;
-    NSLog(@"%@", _username);
-    label.textColor = [UIColor cyanColor];
-    
-    [self.view addSubview:label];
-    
     [self.view addSubview:button];
     self.navigationItem.title = @"Search";
 }

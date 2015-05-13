@@ -15,8 +15,9 @@
 
 
 
-@property UserViewController* rootViewController;
+//@property UserViewController* rootViewController;
 
+@property AppDelegate *sharedDelegate;
 @property UITableView* tableView;
 @property UITextField* name;
 @property UITextField* email;
@@ -24,6 +25,7 @@
 @property UITextField* age;
 @property UILabel *header;
 @property UITextField *location;
+@property UITextField *testField;
 @property UITableView *services;
 
 @property UIButton* submit;

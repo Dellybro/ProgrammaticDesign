@@ -20,19 +20,19 @@
 
 -(void)submitButton:(UIButton *)button{
     
-    
+
     if(_name.text.length > 1){
-        _rootViewController.currentUser.name = _name.text;
+        _sharedDelegate.currentUser.name = _name.text;
     }
     if(_location.text.length > 1){
-        _rootViewController.currentUser.location = _location.text;
+        _sharedDelegate.currentUser.location = _location.text;
     }
     
     if(_email.text.length > 1){
-        _rootViewController.currentUser.email = _email.text;
+        _sharedDelegate.currentUser.email = _email.text;
     }
     if(_age.text.length > 1){
-        _rootViewController.currentUser.age = _age.text;
+        _sharedDelegate.currentUser.age = _age.text;
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -41,9 +41,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _rootViewController = [self.navigationController.viewControllers firstObject];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(20,375, 150,150) style:UITableViewStylePlain];
+    _sharedDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    //_rootViewController = [self.navigationController.viewControllers firstObject];
+    
+    
+    
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(20,350, 150,150) style:UITableViewStylePlain];
     
     // must set delegate & dataSource, otherwise the the table will be empty and not responsive
     _tableView.delegate = self;
@@ -65,16 +70,16 @@
     
     
     _name = [[UITextField alloc] initWithFrame:CGRectMake(20, 175, 100,40)];
-    [_name setText:_rootViewController.currentUser.name];
+    [_name setText:_sharedDelegate.currentUser.name];
     
     _email = [[UITextField alloc] initWithFrame:CGRectMake(20, 225, 100,40)];
-    [_email setText:_rootViewController.currentUser.email];
+    [_email setText:_sharedDelegate.currentUser.email];
     
     _location = [[UITextField alloc] initWithFrame:CGRectMake(20, 275, 100,40)];
-    [_location setText:_rootViewController.currentUser.location];
+    [_location setText:_sharedDelegate.currentUser.location];
     
     _age = [[UITextField alloc] initWithFrame:CGRectMake(20, 325, 100,40)];
-    [_age setText:_rootViewController.currentUser.age];
+    [_age setText:_sharedDelegate.currentUser.age];
     
     
     _header = [[UILabel alloc] initWithFrame:CGRectMake(50,50, 500, 125)];
@@ -106,7 +111,7 @@
 // number of row in the section, I assume there is only 1 row
 - (NSInteger)tableView:(UITableView *)theTableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return _sharedDelegate.currentUser.services.count;
 }
 
 // the cell will be returned to the tableView
@@ -120,7 +125,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     // Just want to test, so I hardcode the data
-    cell.textLabel.text = @"Hello";
+    cell.textLabel.text = _sharedDelegate.currentUser.services[indexPath.row];
     
     return cell;
 }
@@ -129,6 +134,7 @@
 // when user tap the row, what action you want to perform
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.testField becomeFirstResponder];
     NSLog(@"selected %ld row", (long)indexPath.row);
 }
 

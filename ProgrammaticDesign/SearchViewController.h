@@ -12,8 +12,6 @@
 
 @interface SearchViewController : UIViewController
 
-@property NSString* username;
-@property NSString* password;
 
 -(void)buttonAction:(UIButton*)button;
 

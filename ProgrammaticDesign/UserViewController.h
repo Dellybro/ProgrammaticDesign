@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "User.h"
 #import "SearchViewController.h"
 
 @interface UserViewController : UIViewController
 
 -(void)labels;
-
-@property User* currentUser;
 
 @property UILabel* aboutMe;
 @property UILabel* services;
